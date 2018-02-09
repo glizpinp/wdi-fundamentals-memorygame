@@ -31,6 +31,8 @@ if (cardsInPlay[0] === cardsInPlay[1]) {
 	alert("You found a match!");
 } else {
 	alert("Sorry, try again.");
+	//Reload page to reset game board
+	window.location.reload();
 }
 };
 
@@ -46,7 +48,10 @@ cardsInPlay.push(cards[cardId].rank);
 this.setAttribute('src' , cards[cardId].cardImage);
 //Check to see if two cards have been played
 if (cardsInPlay.length === 2) {
+//If so run checkForMatch function
 checkForMatch();
+//Empty cardsInPlay array for next try
+cardsInPlay = [];
 }
 };
 
@@ -70,17 +75,9 @@ document.getElementById('game-board').appendChild(cardElement);
 //Call the createBoard function to create the game board
 createBoard();
 
-/*
-//Create function to reset board when reset button is clicked
+//Create function to reset game board when reset button is clicked
 var resetBoard = function() {
-
-//get each card
-for (var i = 0; i )
-var gameBoard = document.getElementById('game-board');
-//reset each card
-
-
+	window.location.reload();
 };
-
+//Add event handler to button: when button is clicked run resetBoard function
 document.getElementsByTagName('button')[0].addEventListener('click' , resetBoard);
-*/
