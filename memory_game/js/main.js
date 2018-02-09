@@ -53,19 +53,34 @@ checkForMatch();
 //Create a function to create the board
 var createBoard = function () {
 //Loop through the cards array to create card elements
-	for (var i = 0; i < cards.length; i++) {
-		//Create an img element and store in cardElement variable
-		var cardElement = document.createElement('img');
-		//Set the src attribute to display the back of card image
-		cardElement.setAttribute('src' , "images/back.png");
-		//Set the card's data-d attribute to be the index of the current element
-		cardElement.setAttribute('data-id' , i);
-		//Add an event listener so when a card is clicked the flipCard function is executed
-		cardElement.addEventListener('click' , flipCard);
-		//Append cardElement to the game board
-		document.getElementById('game-board').appendChild(cardElement);
-	}
-	};
-	
+for (var i = 0; i < cards.length; i++) {
+//Create an img element and store in cardElement variable
+var cardElement = document.createElement('img');
+//Set the src attribute to display the back of card image
+cardElement.setAttribute('src' , "images/back.png");
+//Set the card's data-d attribute to be the index of the current element
+cardElement.setAttribute('data-id' , i);
+//Add an event listener so when a card is clicked the flipCard function is executed
+cardElement.addEventListener('click' , flipCard);
+//Append cardElement to the game board
+document.getElementById('game-board').appendChild(cardElement);
+}
+};
+
 //Call the createBoard function to create the game board
 createBoard();
+
+/*
+//Create function to reset board when reset button is clicked
+var resetBoard = function() {
+
+//get each card
+for (var i = 0; i )
+var gameBoard = document.getElementById('game-board');
+//reset each card
+
+
+};
+
+document.getElementsByTagName('button')[0].addEventListener('click' , resetBoard);
+*/
